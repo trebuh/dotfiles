@@ -1,0 +1,64 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	source /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature
+# export SYSTEMD_PAGER=
+
+if [[ $- != *i* ]] ; then
+	# Shell is non-interactive.  Be done now!
+	return
+fi
+
+complete -cf sudo
+
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+reset=$(tput sgr0)
+#LOCALHOST="FRL-2N0X5H2"
+LOCALHOST="archbox"
+PS1='$(if [[ $? != 0 ]]; then printf "\[$red\]!!\[$reset\]"; else printf "  "; fi; if [ $(hostname) != "$LOCALHOST" ];
+then host="@\[$green\]\h\[$reset\]"; fi) \[$red\]\u\[$reset\]${host}:\[$blue\] \w \[$reset\] $ '
+
+PROMPT_COMMAND='history -a;history -n'
+
+export HISTSIZE=100500
+export HISTCONTROL=ignoredups:erasedups
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+export HISTIGNORE="history"
+
+export TERM=xterm-termite
+
+export DOCKER_CONFIG="$HOME/etc/docker"
+
+export GOPATH="$HOME/src/go-projects"
+
+#export SSH_ASKPASS=ssh-askpass
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+shopt -s cdspell
+
+alias vim='nvim'
+alias k='kubectl'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -rtlh'
+alias free='free -h'
+alias df='df -h'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# shellcheck disable=SC1091
+kubectl completion bash | source /dev/stdin
+# shellcheck disable=SC1091
+helm completion bash | source /dev/stdin
+
+complete -C /usr/bin/vault vault
