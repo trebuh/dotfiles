@@ -1,0 +1,51 @@
+icons = "material-nf"
+icons_format = " <span font_family='JetBrainsMono Nerd Font'size='large'>{icon}</span> "
+
+[theme]
+name = "slick"
+[theme.overrides]
+separator = ""
+#separator = "\uE0C7'"
+
+[[block]]
+block = "docker"
+interval = 2
+
+[[block]]
+block = "disk_space"
+path = "/"
+format = "{icon} {free}"
+info_type = "available"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "disk_space"
+path = "/home"
+format = " {free}"
+info_type = "available"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_total_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "temperature"
+interval = 10
+
+[[block]]
+block = "time"
+interval = 60
