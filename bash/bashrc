@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # .bashrc
 
 # Source global definitions
@@ -19,12 +20,11 @@ red=$(tput setaf 1)
 green=$(tput setaf 2)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
-#LOCALHOST="FRL-2N0X5H2"
 LOCALHOST="archbox"
 PS1='$(if [[ $? != 0 ]]; then printf "\[$red\]!!\[$reset\]"; else printf "  "; fi; if [ $(hostname) != "$LOCALHOST" ];
 then host="@\[$green\]\h\[$reset\]"; fi) \[$red\]\u\[$reset\]${host}:\[$blue\] \w \[$reset\] $ '
 
-PROMPT_COMMAND='history -a;history -n'
+PROMPT_COMMAND='history -a; history -n'
 
 export HISTSIZE=100500
 export HISTCONTROL=ignoredups:erasedups
@@ -35,7 +35,7 @@ export TERM=xterm-termite
 
 export DOCKER_CONFIG="$HOME/etc/docker"
 
-export GOPATH="$HOME/src/go-projects"
+export GOPATH="$HOME/src/tools/go-packages"
 
 #export SSH_ASKPASS=ssh-askpass
 
