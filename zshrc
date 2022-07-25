@@ -22,7 +22,7 @@ export ASDF_DIR="/opt/asdf-vm"
 
 # Plugins settings.
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(ssh-agent git mvn docker kubectl helm terraform aws gcloud asdf)
+plugins=(ssh-agent git docker kubectl helm terraform aws gcloud asdf)
 
 source <(terraform-docs completion zsh)
 source <(fluxctl completion zsh)
