@@ -1,9 +1,9 @@
+# vim: set filetype=gitconfig :
+
 [core]
     autocrlf = input
 [init]
     defaultBranch = main
-[credential "https://github.com"]
-    username = trebuh 
 [color]
     diff = auto
     status = auto
@@ -18,6 +18,8 @@
 [alias]
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
     untag = "!sh -c 'git tag -d $0 && git push origin :refs/tags/$0'"
-# vim: set filetype=gitconfig :
+
+[credential "https://github.com"]
+    username = trebuh 
 [hub]
     protocol = ssh
