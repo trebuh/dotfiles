@@ -17,6 +17,9 @@ HISTSIZE=10000
 SAVEHIST=1000
 HIST_STAMPS="dd.mm.yyyy" # Command history date format.
 
+# init oh-my-zsh
+source "$ZSH/oh-my-zsh.sh"
+
 # Plugin settings.
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(ssh-agent git docker kubectl helm terraform aws gcloud)
@@ -27,9 +30,6 @@ source <(fluxctl completion zsh)
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/vault vault
-
-# init oh-my-zsh
-source "$ZSH/oh-my-zsh.sh"
 
 # Common exported variables
 export LANG="en_US.utf8"
