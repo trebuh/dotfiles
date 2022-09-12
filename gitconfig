@@ -30,6 +30,3 @@
 
 [credential "https://github.com"]
     username = trebuh
-
-[hub]
-    protocol = ssh
