@@ -2,7 +2,7 @@
 [user]
     name = trebuh
     email = trebuh@users.noreply.github.com
-    signingkey = 4BA0008118FCBF8A
+    signingkey = 8B751E128FD799D3
 
 [core]
     autocrlf = input
